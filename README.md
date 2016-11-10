@@ -43,7 +43,30 @@ Despues de unos momentos recibiras un sms al celular de la sim que habias ingres
 
 $ python yowsup-cli registration --config mydetails --register xxx-xxx
 
+Se recibira un codigo como el siguiente:
 
+status: ok
+kind: free
+pw: jK0zdPJ9zz0BBC3CwmnLqmxuhBk=
+price: 0.89
+price_expiration: 1434674993
+currency: EUR
+cost: 0.89
+expiration: 1463544490
+login: 448375972334
+type: new
+
+7.Esto demostrara que se hizo el registro correctamente, el dato importante de este mensaje recibido es el PW,esta contraseña larga que incluyendo el = del final
+
+8.Ahora vamos a mydetails y añadimos una linea que se llame password=jK0zdPJ9zz0BBC3CwmnLqmxuhBk= y le adjuntamos el pw del mensaje recibido,el archivo deberia quedar asi:
+
+cc=57
+phone=573002354706
+password=jK0zdPJ9zz0M8G3CwmnLqmxuhBk=
+
+9.Ahora descargamos el archivo layers de este repositorio y lo reemplazamos en yowsup-Master/yowsup/demos/echoclient 
+
+10. ejecutamos los el archivo con $ yowsup-cli demos --echo --config mydetails
 
 
 
