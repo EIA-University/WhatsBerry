@@ -66,7 +66,7 @@ password=jK0zdPJ9zz0M8G3CwmnLqmxuhBk=
 
 9.Ahora descargamos el archivo layers de este repositorio y lo reemplazamos en yowsup-Master/yowsup/demos/echoclient 
 
-10. ejecutamos los el archivo con $ yowsup-cli demos --echo --config mydetails
+9.1. ejecutamos los el archivo con $ yowsup-cli demos --echo --config mydetails
 
 
 
