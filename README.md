@@ -8,6 +8,7 @@ Elementos Necesarios:
 
 -Raspberry Pi 3
 -SD card de 8gb o mas
+-Sim card sin whatsapp registrado
 
 Pasos a seguir:
 1.Antes de entrar a trabajar con las librerias de Yowsupp debemos preparar el entorno de trabajo instalando python y buscando las          librerias necesarias,para lo cual ejecutamos:
@@ -18,6 +19,31 @@ $ sudo apt-get install git python-dev libncurses5-dev
 
 $ git clone git://github.com/tgalal/yowsup.git
 
-3.Ahora vamos a la carpeta donde lo instalamos,el cual sera el directorio donde se ejecuto el comando anterior:
+3.Ahora vamos a la carpeta donde lo instalamos,el cual sera el directorio donde se ejecuto el comando anterior,y dentro de esta carpeta ejecutamos el comando para instalar el setup:
+
+$cd Yowsupp
+
+$sudo python setup.py install
+
+4.Ahora debemos registrar un telefono con el cual trabajaremos (El de la sim),para esto creamos un archivo llamado mydetails y ponemos el numero de identificacion de cada pais,en este caso 57 para colombia,y luego el telefono de la sim con la prepocision del numero de identificacion:
+
+$ nano mydetails
+
+cc=57
+
+phone=573002354706
+
+5.Despues de Guardar el archivo del paso anterior,ahora le pedimos un codigo de confirmacion a whatsapp
+
+$ python yowsup-cli registration --config mydetails --requestcode sms
+
+Despues de unos momentos recibiras un sms al celular de la sim que habias ingresado,recibiras un codgigo de 6 digitos xxx-xxx
+
+6.registramos nuestro numero ingresando el siguiente comando (reemplazamos las xxx-xxx por el codgio que llego al celular):
+
+$ python yowsup-cli registration --config mydetails --register xxx-xxx
+
+
+
 
 
